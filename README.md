@@ -204,7 +204,8 @@ http://localhost:5173
 **Pradeeshna Poluri**
 
 - GitHub: https://github.com/pradeeshnapoluri-eng
-- LinkedIn: Add your LinkedIn profile here
+- LinkedIn: https://www.linkedin.com/in/pradeeshna-poluri-447b83339/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BzAuQhPJsS86H2tA1NWgKfQ%3D%3D
+  
 
 ---
 
