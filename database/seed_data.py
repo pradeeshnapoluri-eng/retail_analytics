@@ -2,6 +2,15 @@ import pandas as pd
 import pymysql
 import os
 from dotenv import load_dotenv
+from pathlib import Path
+
+env_path = Path(__file__).resolve().parent.parent / ".env"
+print("ENV PATH:", env_path)
+load_dotenv(env_path)
+
+print("HOST:", os.getenv("DB_HOST"))
+print("DB:", os.getenv("DB_NAME"))
+print("USER:", os.getenv("DB_USER"))
 
 # Fix: load .env from root folder, not database/
 load_dotenv(os.path.join(os.path.dirname(__file__), '..', '.env'))
