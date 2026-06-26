@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RetailIQ — Analytics Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        background: #020817;
+        color: #e2e8f0;
+        font-family: 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      #loader {
+        position: fixed; inset: 0;
+        background: #020817;
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.6s ease;
+      }
+      #loader.hide { opacity: 0; pointer-events: none; }
+      .loader-logo {
+        font-size: 32px; font-weight: 800;
+        letter-spacing: -1px; margin-bottom: 28px;
+        background: linear-gradient(135deg, #6366f1, #a78bfa);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .loader-track {
+        width: 200px; height: 3px;
+        background: #1e293b; border-radius: 99px; overflow: hidden;
+      }
+      .loader-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #6366f1, #a78bfa);
+        border-radius: 99px;
+        animation: fill 1.4s ease forwards;
+      }
+      .loader-sub {
+        margin-top: 14px; font-size: 12px;
+        color: #475569; letter-spacing: 0.06em;
+      }
+      @keyframes fill { from { width: 0% } to { width: 100% } }
+      #root { min-height: 100vh; }
+    </style>
+  </head>
+  <body>
+    <div id="loader">
+      <div class="loader-logo">RetailIQ</div>
+      <div class="loader-track"><div class="loader-fill"></div></div>
+      <p class="loader-sub">Loading analytics engine...</p>
+    </div>
+    <div id="root"></div>
+    <script>
+      setTimeout(() => {
+        const l = document.getElementById('loader');
+        if (l) { l.classList.add('hide'); setTimeout(() => l.remove(), 700); }
+      }, 1500);
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
